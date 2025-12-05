@@ -1,310 +1,50 @@
 body {
-    font-family: 'Press Start 2P', Courier, monospace;
-    background: #232026;
-    color: #fff;
+    background: #ffeacf;
+    font-family: 'Verdana', monospace;
     text-align: center;
     margin: 0;
     padding: 0;
 }
-h1 {
-    margin-top:18px;
-    margin-bottom:6px;
-    letter-spacing:2px;
-    font-size:20px;
-}
-/* Start Screen */
-#start-screen {
-    position: fixed;
-    left: 0; top: 0; width: 100vw; height: 100vh;
-    background: #161518ee;
-    display: flex; flex-direction: column;
-    justify-content: center; align-items: center;
-    z-index: 10;
-}
-.tutorial {
-    background: #25293b;
-    padding: 20px 30px 17px;
-    border-radius: 10px;
-    box-shadow: 0 3px 13px #17151b88;
-    margin-bottom: 23px;
-    outline: 2px solid #444;
-    min-width:270px;
-}
-#start-screen h2 {
-    font-size:19px;
-    text-decoration: underline;
-    margin-bottom:9px;
-}
-#start-btn {
-    font-size: 21px;
-    padding: 7px 43px 7px;
-    border-radius: 7px;
-    border: none;
-    cursor: pointer;
-    background: #fefbbe;
-    color: #231c1c;
-    font-family: inherit;
-    font-weight: bold;
-    margin-top: 17px;
-    letter-spacing: .5px;
-    box-shadow: 0 2px 6px #372231;
-    outline: 2px solid #cab653;
-    transition: background 0.14s;
-}
-#start-btn:hover { background: #fff6cf; }
-/* DEMO Pancake */
-/* All dimension multiples of 2px (pixel-style) */
-.pixel-pancake {
-    position: relative;
+
+#gameContainer {
     display: inline-block;
-    width: 36px; height: 34px;
-}
-.pixel-pancake .body {
-    position: absolute;
-    left: 7px; top: 8px;
-    width: 22px; height: 15px;
-    background: #FCCF66;
-    border: 2px solid #874e24;
-    border-radius: 5px;
-}
-.pixel-pancake .arm {
-    position: absolute;
-    width: 8px;
-    height: 4px;
-    background: #e1a278;
-    border-radius: 2px;
-}
-.pixel-pancake .arm.left {left: -2px; top:12px;}
-.pixel-pancake .arm.right {right: -2px; top:12px;}
-.pixel-pancake .leg {
-    position: absolute;
-    width: 8px; height: 4px;
-    background: #7c5024;
-    border-radius: 1.5px;
-}
-.pixel-pancake .leg.left {bottom: -1px; left:11px;}
-.pixel-pancake .leg.right {bottom: -1px; left:17px;}
-.pixel-pancake .eye {
-    position: absolute;
-    left: 13px;
-    top: 14px;
-    width: 4px; height: 4px;
-    background: #181716;
-    border-radius: 2px;
-}
-.pixel-pancake .eye.right { left: 20px}
-.pixel-pancake .smile {
-    position: absolute;
-    left: 15px; top:19px;
-    width: 8px; height: 2px;
-    background: #957433;
-    border-radius: 4px;
-    border-bottom: 2px solid #593407;
-}
-/* Demo Setan Pixel: Putih, kotak */
-.pixel-ghost {
-    position: relative;
-    width: 24px; height: 24px;
-}
-.pixel-ghost .body {
-    position: absolute;
-    left: 2px; top:3px;
-    width: 19px; height: 15px;
-    background: #fff;
-    border: 2.5px solid #63aef9;
-    border-radius: 5px;
-    box-shadow: 0 1px 7px #b4efff99 inset;
-}
-.pixel-ghost .eye.left, .pixel-ghost .eye.right {
-    position: absolute; background: #63aef9; width:4px;height:4px;top:9px;
-    border-radius:1.5px;
-}
-.pixel-ghost .eye.left { left:6px;}
-.pixel-ghost .eye.right{ left:13px;}
-.pixel-ghost .mouth{
-    position: absolute; left:9px; top:14px; width:7px;height:3px;
-    border-bottom:2px solid #60bbe7;border-radius:0 0 4px 4px;
-    background: none;
+    background: #faf7d8;
+    border: 5px solid #eead60;
+    border-radius: 16px;
+    padding: 12px;
+    margin-top: 12px;
 }
 
-/* --------- GAME PIXEL HOTEL BG --------- */
-#game-container {
-    position: relative;
-    margin: 30px auto 0 auto;
-    width: 565px;
-    height: 230px;
-    background: #212020;
-    border: 4px solid #201158;
-    box-shadow: 0 0 10px #36249b90, 0 0 50px #120d1390 inset;
-    overflow:hidden;
+canvas {
+    image-rendering: pixelated;
+    background: #ffd68f;
+    border: 3px solid #e3ae7a;
+    margin-bottom: 10px;
 }
-#hotel-bg {
-    position: absolute;
-    left: 0; top: 0; width: 100%; height: 100%; z-index:0;
-    pointer-events:none;
+
+#controls {
+    font-size: 18px;
+    color: #af6b27;
+    margin-bottom: 4px;
 }
-/* Ceiling, lamps */
-.ceiling {
-    position:absolute;left:0;top:0;width:100%;height:22px;
-    background: #eeeaf1;
-    border-bottom: 3px solid #70b5d9;
-}
-.lamps {position:absolute;left:24px;top:2px;width:510px;height:19px;}
-.lamp {
-    position:absolute;
-    width:28px;height:12px;
-    background:#ffd;
-    border-radius:4px;
-    border:2px solid #d4bb5e;
-    box-shadow:0px 2px 11px #ffe48a inset;
-}
-.lamp.l1 { left:6px;}
-.lamp.l2 { left:202px;}
-.lamp.l3 { right:0px;}
-.lamp-stick {
-    position:absolute;left:13.2px;top:11px;width:2.2px;height:12px;
-    background:#888;border-radius:1px;}
-.walls {
-    position:absolute;left:0;top:22px;width:100%;height:110px;
-    background:linear-gradient(180deg,#edeefb 60%,#78b5ef 95%,#446eaa 110px,#363265 120px 96%);
-}
-.doors {
-    position: absolute;
-    top:57px;width:60px;height:100px;
-    display:flex;flex-direction:column;gap:28px;
-}
-.doors-left {left:15px;}
-.doors-right {right:15px;}
-.door {
-    width:34px; height:65px;
-    background: #ecdea5;
-    border:2px solid #c4ad64;
-    border-radius:6px;
-    position:relative;
-    /* pixel style block */
-}
-.door .knob {
-    position:absolute;
-    right:6px; top:37px;
-    width:8px;height:7px;
-    background:#ede4bc;
-    border-radius:4px;
-    border: 2px solid #897313;
-}
-.carpet {
-    position: absolute;
-    left:47px; bottom:0;
-    width:474px;height:58px;
-    background: repeating-linear-gradient(
-        90deg,#fb5695 0 24px,#fcf75c 24px 48px);
-    border-top:8px solid #eede96;
-    box-shadow:0 5px 18px #fafba499,0 1px 22px #fbf4a4 inset;
-    border-bottom-left-radius:16px;
-    border-bottom-right-radius:16px;
-}
-.floor {
-    position:absolute;left:0;bottom:0;width:100%;height:14px;
-    background: linear-gradient(90deg,#CCC39A 85%,#b9c599 100%);
-    border-top:4px solid #f7f1a6;
-}
-/* ---------- PANCAKE PLAYER PIXEL --------- */
-#player {
-    position: absolute;
-    z-index:12;
-    bottom: 51px;
-    left: 63px;
-    width: 36px; height: 36px;
-}
-#player .body {
-    position: absolute;
-    left: 7px; top: 10px;
-    width: 21px; height: 14px;
-    background: #FFD076;
-    border: 2px solid #805824;
-    border-radius: 6px;
-}
-#player .arm {
-    position: absolute;
-    width: 8px;
-    height: 4px;
-    background: #e1a278;
-    border-radius: 2px;
-    transition:transform 0.19s;
-}
-#player .arm.left {left: -2px; top:14px;}
-#player .arm.right {right: -2px; top:14px;}
-#player.active .arm.left{transform:rotate(-32deg);}
-#player.active .arm.right{transform:rotate(29deg);}
-#player .leg {
-    position: absolute;
-    width: 8px; height: 4px;
-    background: #80602e;
-    border-radius: 1.5px;
-    transition:transform 0.19s;
-}
-#player .leg.left {bottom: -1px; left:12.2px;}
-#player .leg.right {bottom: -1px; left:18px;}
-#player.active .leg.left{transform:rotate(-14deg);}
-#player.active .leg.right{transform:rotate(17deg);}
-#player .eye {
-    position: absolute;
-    left: 13px;
-    top: 16px;
-    width: 4px; height: 4px;
-    background: #181716;
-    border-radius: 2px;
-}
-#player .eye.right { left: 20px}
-#player .smile {
-    position: absolute;
-    left: 15px; top:21px;
-    width: 8px; height: 2px;
-    background: #A1773A;
-    border-radius: 2px;
-    border-bottom: 2px solid #543207;
-}
-/* ---------- MONSTER setan pixel block --------- */
-.obstacle {
-    position: absolute;
-    bottom: 52px;
-    width: 24px; height: 24px;
-    z-index:11;
-}
-.obstacle .body {
-    position: absolute;
-    left: 2px; top:4px;
-    width: 17px; height: 13px;
-    background: #fff;
-    border: 2.4px solid #60bbf6;
-    border-radius: 4px;
-    box-shadow: 0 0 8px #b4efff77 inset;
-}
-.obstacle .eye.left, .obstacle .eye.right {
-    position: absolute; background: #2c99f6; width:4px;height:4px;top:9px;
-    border-radius:1px;
-}
-.obstacle .eye.left { left:5px;}
-.obstacle .eye.right{ left:11px;}
-.obstacle .mouth{
-    position: absolute; left:7.5px; top:14px; width:7px;height:3px;
-    border-bottom:2px solid #67aabf;border-radius:0 0 2px 2px;
-    background: none;
-}
-@keyframes shake { 
-    0% { transform: translateY(0) scaleX(1);}
-    40%{ transform: translateY(-1.3px) scaleX(0.97);}
-    70% {transform:translateY(2.1px) scaleX(1.07);}
-    100% { transform: translateY(0) scaleX(1);}
-}
-.obstacle { animation: shake 0.8s infinite;}
+
 #score {
-    font-size: 19px;
-    margin-top: 13px;
-    font-family:inherit;
+    font-size: 20px;
+    font-weight: bold;
+    color: #a86741;
 }
-#game-tips {
-    font-size:15px;
-    margin-top:8px;
-    color:#fffbe8;
-    font-family:inherit;
+
+#restartBtn {
+    margin-top: 8px;
+    font-size: 18px;
+    padding: 4px 12px;
+    background: #ffefad;
+    border: 2px solid #edc971;
+    border-radius: 8px;
+    color: #623e19;
+    cursor: pointer;
+}
+
+#restartBtn:hover {
+    background: #ffe7ab;
 }
