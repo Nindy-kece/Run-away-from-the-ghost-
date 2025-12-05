@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pancake Run: Haunted Hotel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Pancake Run: Haunted Hotel</h1>
+    <!-- Layar Start yang muncul pertama kali -->
+    <div id="start-screen">
+        <div class="tutorial">
+            <h2>Panduan</h2>
+            <p>Kamu adalah <span class="pancake-demo"></span>  pancake kecil!</p>
+            <p>Lompat untuk menghindari <span class="obstacle-demo"></span> setan yang mengejar di hotel angker.</p>
+            <ul style="text-align:left;display:inline-block;">
+                <li>Tekan <strong>Spasi</strong> <br>atau<br> Ketuk area game untuk <strong>Melompat</strong>
+                </li>
+                <li>Lompat ketika setan mendekat agar selamat dan dapat skor.</li>
+                <li>Jika tertangkap, kamu kalah!</li>
+            </ul>
+        </div>
+        <button id="start-btn">START</button>
+    </div>
+
+    <!-- Game container, disembunyi sebelum start -->
+    <div id="game-container" style="display:none;">
+        <div id="player"></div>
+    </div>
+    <p id="game-tips" style="display:none;">Tekan <strong>Spasi</strong> atau klik area untuk lompat!</p>
+    <p id="score" style="display:none;">Skor: 0</p>
+    <script src="script.js"></script>
+</body>
+</html>
