@@ -2,16 +2,16 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Pancake Pixel Run: Haunted Hotel</title>
+    <title>Pancake Pixel Run: Hotel Hallway</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Pancake Pixel Run: Haunted Hotel</h1>
+    <h1>Pancake Pixel Run: Hotel Hallway</h1>
     <!-- Start Screen -->
     <div id="start-screen">
         <div class="tutorial">
             <h2>Panduan</h2>
-            <div style="margin-bottom:9px;margin-top:-3px;">
+            <div style="margin-bottom:9px;">
               <span>Ini kamu (pancake pixel): </span>
               <span class="pancake-demo">
                 <div class="pixel-pancake">
@@ -36,7 +36,7 @@
                   </div>
               </span>
             </div>
-            <ul style="text-align:left;display:inline-block;margin-top:7px;">
+            <ul style="text-align:left;display:inline-block;">
                 <li>Tekan <strong>Spasi</strong> <br>atau <br> klik area game<br> untuk meloncat</li>
                 <li>Lompat tepat waktu agar selamat &amp; skor naik.</li>
                 <li>Pancake dikejar, jika ketangkap, kalah!</li>
@@ -46,7 +46,13 @@
     </div>
     <!-- Game Area -->
     <div id="game-container" style="display:none;">
-        <div id="background-pixel"></div>
+        <div id="hotel-bg">
+            <div class="lamps"></div>
+            <div class="doors left"></div>
+            <div class="doors right"></div>
+            <div class="carpet"></div>
+            <div class="shadows"></div>
+        </div>
         <div id="player"></div>
     </div>
     <p id="game-tips" style="display:none;">Tekan <strong>Space</strong> atau klik area untuk meloncat!</p>
