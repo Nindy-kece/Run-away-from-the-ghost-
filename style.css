@@ -1,19 +1,19 @@
 body {
     font-family: 'Press Start 2P', Courier, monospace;
-    background: #2e2631;
+    background: #231c26;
     color: #fff;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 h1 {
-    margin-top:20px;
-    margin-bottom:10px;
+    margin-top:18px;
+    margin-bottom:5px;
     letter-spacing:2px;
-    font-size:23px;
+    font-size:22px;
 }
 
-/* --- SCREEN --- */
+/* SCREEN */
 #start-screen {
     position: fixed;
     left: 0; top: 0; width: 100vw; height: 100vh;
@@ -26,18 +26,17 @@ h1 {
 }
 #start-screen .tutorial {
     background: #232126;
-    padding: 20px 28px 18px;
+    padding: 20px 32px 17px;
     border-radius: 9px;
     box-shadow: 0 3px 18px #090e;
     margin-bottom: 23px;
     outline: 2px solid #444;
+    min-width:270px;
 }
 #start-screen h2 {
     font-family: inherit;
     font-size:20px;
     text-decoration: underline;
-    margin-bottom:7px;
-    margin-top:4px;
 }
 #start-btn {
     font-size: 20px;
@@ -73,53 +72,43 @@ h1 {
     left: 8px; top: 9px;
     width: 18px; height: 12px;
     background: #FFD076;
-    border: 2.2px solid #7d5027;
-    border-radius: 4px;
-    box-shadow: 0 0 0 1px #957248;
+    border: 2px solid #7d5027;
+    border-radius: 6px 9px 8px 7px;
+    box-shadow: 0 0 0 1px #aa8948;
 }
 .pixel-pancake .arm {
     position: absolute;
     width: 8px;
     height: 3px;
-    background: #db8658;
+    background: #e1a278;
     border-radius: 2.5px;
-    z-index: 2;
+    z-index: 3;
 }
-.pixel-pancake .arm.left {
-    left: 0px; top: 13px;
-    transform: rotate(-19deg);
-}
-.pixel-pancake .arm.right {
-    right: 0px; top: 13px;
-    transform: rotate(15deg);
-}
+.pixel-pancake .arm.left {left: 0px; top: 13px; transform: rotate(-19deg);}
+.pixel-pancake .arm.right {right: 0px; top: 13px; transform: rotate(15deg);}
 .pixel-pancake .leg {
     position: absolute;
-    width: 11px; height: 3px;
+    width: 8px; height: 3px;
     background: #7d5027;
     border-radius: 1.6px;
-    z-index:2;
+    z-index: 3;
 }
-.pixel-pancake .leg.left {
-    bottom: 2px; left: 7.8px; transform: rotate(-15deg);
-}
-.pixel-pancake .leg.right {
-    bottom: 2px; left: 14px; transform: rotate(10deg);
-}
+.pixel-pancake .leg.left {bottom: 0px; left: 9px; transform: rotate(-13deg);}
+.pixel-pancake .leg.right {bottom: 0px; left: 15px; transform: rotate(13deg);}
 .pixel-pancake .eye {
     position: absolute;
-    width: 2.2px;
-    height: 2.2px;
+    width: 2.7px;
+    height: 2.5px;
     background: #222;
-    border-radius: 1.2px;
+    border-radius: 1.3px;
     top: 13px;
 }
-.pixel-pancake .eye.left { left: 14.3px;}
-.pixel-pancake .eye.right { left: 19.5px;}
+.pixel-pancake .eye.left { left: 14.1px;}
+.pixel-pancake .eye.right { left: 19.1px;}
 .pixel-pancake .smile {
     position: absolute;
-    top: 16px; left: 16px;
-    width: 6px; height: 2px;
+    top: 16px; left: 13.8px;
+    width: 6.5px; height: 2.8px;
     border-radius: 0 0 3px 3px;
     background: none;
     border-bottom: 2px solid #282b10;
@@ -128,208 +117,236 @@ h1 {
 /* Monster - red ghost/setan */
 .pixel-ghost {
     position:relative; display:inline-block;
-    width:23px; height:27px;
-} 
+    width:22px; height:27px;
+}
 .pixel-ghost .ghost-face {
     position: absolute;
     left:3px; top:4px;
-    width:17px; height:15px;
+    width:16px; height:15.4px;
     background: #ec1b24;
-    border-radius: 6px 6px 8px 8px/12px 11px 7px 13px;
-    border: 2.8px solid #77080e;
-    box-shadow:0 1.8px 0 #f88086 inset, 0 0 0px 1.7px #66121B;
+    border-radius: 6px 7px 8px 8px/12px 11px 7px 13px;
+    border: 2.7px solid #77080e;
+    box-shadow:0 1.9px 0 #f88086 inset, 0 0 0px 1.8px #66121B;
 }
 .pixel-ghost .ghost-eye.left {
-    position: absolute; width:3.5px; height:4px;
-    background:#fff; left:9px; top:10px; border-radius:100%;
+    position: absolute; width:3.3px; height:4.2px;
+    background:#fff; left:9px; top:10.5px; border-radius:73%;
     box-shadow: 5px 0 0 #fff;
-    border-bottom:1px solid #bbb;
-}
-.pixel-ghost .ghost-eye.right {display:none;} /* only left used for shadow effect */
-/* mouth pixel */
-.pixel-ghost:after {
-    content:"";
-    position:absolute;
-    left:11px;top:18.3px;
-    width:4px; height:1.7px;
-    border-radius:2px;
-    background:#670800;
-    box-shadow:-2.5px 0 #670800;
+    border-bottom:1px solid #c23a3a;
 }
 
-/* --- MAIN GAME --- */
+/***********
+ HOTEL PIXEL HALLWAY BG
+***********/
 #game-container {
     position: relative;
-    margin: 33px auto 0 auto;
-    width: 560px;
-    height: 210px;
-    background: #332944;
-    border: 5px solid #304;
+    margin: 30px auto 0 auto;
+    width: 565px;
+    height: 225px;
+    background: #232222;
+    border: 5px solid #232019;
     overflow: hidden;
-    box-shadow: 0 0 17px #211a2c, 0 0 40px #120d1390 inset;
-    display: block;
+    box-shadow: 0 0 17px #321a2c, 0 0 40px #120d1390 inset;
 }
-
-/* HOTEL PIXEL HALLWAY */
-#background-pixel {
-    position: absolute;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    z-index:0;
-    pointer-events: none;
-    /* Main wall color */
+#hotel-bg {
+    position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index:1;
+    pointer-events:none;
     background:
-        /* Carpets */
-        linear-gradient(90deg,#a2283c 89.8%,transparent 0%) 0 170px/80px 40px repeat-x,
-        /* Runner shadow */
-        linear-gradient(to top,rgba(0,0,0,0.15) 85%,transparent 100%) 0 165px/100% 40px no-repeat,
-        /* Walls */
-        linear-gradient(to bottom,#726593 60%,#3e3245 120px,#20141a 100% );
-    border-bottom:2.7px solid #554a86;
+        /* left wall shadow */
+        linear-gradient(90deg, #322a33 0 45px, transparent 46px),
+        /* right wall shadow */
+        linear-gradient(-90deg, #322a33 0 45px, transparent 46px),
+        /* main wall bg */
+        linear-gradient(180deg, #685878 60%, #3f3246 110px, #211017 100% ),
+        /* subtle wall texture */
+        repeating-linear-gradient(90deg,rgba(80,74,88,0.13) 0 7px,transparent 7px 14px),
+        repeating-linear-gradient(180deg,rgba(255,255,255,0.07) 0 13px,transparent 14px 19px);
 }
-/* Repeating room lines and doors - drawn in CSS and with pseudo for more pixel feeling */
-#background-pixel:before, #background-pixel:after {
-    content: '';
+
+/* DOORS */
+.doors {
     position: absolute;
-    top: 65px; width: 100%; height: 36px;
-    pointer-events: none;
-    background-repeat: repeat-x;
-    opacity:0.9;
+    top: 65px;
+    width: 85px;
+    height: 120px;
 }
-#background-pixel:before {
-    /* Doors shadow top row */
-    left: 0;
-    background-image:
-        linear-gradient(90deg,transparent 0 32px,#d8cab2 32px 37px,transparent 37px 102px,#8b7b55 98px 104px,transparent 104px 150px),
-        linear-gradient(90deg,transparent 0 150px,#beab95 150px 158px,transparent 158px 340px);
-    background-size: 140px 100%; 
-    height: 37px; /* Combine walls+doors top */
+.doors.left { left:6px;}
+.doors.right { right:6px;}
+.doors .door {
+    position: absolute;
+    width: 30px; height: 69px;
+    background: #b09774;
+    border: 3.2px solid #6b4d28;
+    border-radius:4px;
+    box-shadow: 0 4px 0 #6c3d23 inset,0 1px 5px #231710 ;
 }
-#background-pixel:after {
-    /* Repeating pixels for floor/separators */
-    top:169px;
-    background-image:
-        repeating-linear-gradient(90deg,transparent 0 38px,#915f36 38px 41px,#e3af52 41px 45px,transparent 45px 85px);
-    height:8px;
+.doors.left .door { left:4px;}
+.doors.right .door { right:4px;}
+.doors .door .knob {
+    position: absolute;
+    right:4px; bottom:23px;
+    width:5px; height:4px;
+    background: #fff7a2;
+    border-radius:10px;
+    border: 1.3px solid #8a6c2a;
+}
+.doors.right .door .knob { left:4px; right:auto;}
+.doors .door:nth-child(2) {
+    top:41px; left:30px;
+    width:31px;
+    background: #d4c4a0;
+    border-color:#7c6c5e;
+}
+.doors.right .door:nth-child(2) {left:auto;right:30px;}
+
+.lamps {
+    position: absolute;
+    left:197px; top:18px;
+    width:162px; height:19px;
+    display: flex;
+    justify-content: space-between;
+}
+.lamps .lamp {
+    position: relative;
+    background:#eee4ce;
+    width:17px; height:7px; margin:2px 25px;
+    border-radius:3px;
+    box-shadow:0 0 32px 13px #fffeb3,0 0 7px 1px #fff966;
+}
+.lamps .lamp-stick {
+    position: absolute;
+    left: 8px; top:7px;
+    width:2.3px; height:10.8px;
+    background:#898181; border-radius:5px;
+}
+.lamps .lamp-top {
+    position: absolute; left:6px; top:-2px; width:5px;height:3px;
+    background:#e2e0d0;border-radius:5px;
 }
 
-/* Carpet middle line */
-#background-pixel .carpet-stripe {
-    position: absolute; left:0; top:190px; width:100%; height:8px;
-    background: repeating-linear-gradient(90deg,#f7df74 0 14px,transparent 14px 40px);
+.carpet {
+    position: absolute;
+    left:79px; bottom:0;
+    width:407px; height:39px;
+    background: linear-gradient(180deg, #cb1836 75%,#930a22 100%);
+    box-shadow: 0 0 14px 5px #722831a5,last 0 -6px 0 9px rgba(230,95,67,0.41) inset;
+    border-radius:25px 25px 0 0/15px 15px 0 0;
+    border-top:4px solid #fff28a;
+    overflow:hidden;
+}
+.carpet:after {
+    content:'';
+    position:absolute; top:8px; left:0;
+    width:100%; height:6px;
+    background: repeating-linear-gradient(90deg,#f6e1a2 0 15px,transparent 16px 34px);
+}
+.carpet:before {
+    content:'';
+    position:absolute; bottom:1px; left:0;
+    width:100%; height:8px;
+    background: repeating-linear-gradient(90deg,#ad095f 0 13px,transparent 13px 32px);
+}
+.shadows {
+    position:absolute;
+    left:0;bottom:0;width:100%;height:55px;
+    z-index:9;
+    pointer-events:none;
+}
+.shadows:before {
+    content:"";
+    position:absolute;left:0;bottom:0;width:100%;height:34px;
+    background:linear-gradient(180deg,rgba(32,8,7,0.33),transparent 100% );
 }
 
+/* Main floor/edges */
 #game-container:after {
     content:"";
     display:block;
-    position:absolute; left:0; bottom:0;
-    width:100%; height:16px;
-    /* skirting more pixel */
-    background: repeating-linear-gradient(
-        90deg, #7c412c 0 12px, #533f50 12px 17px
-    );
-    border-top: 3px solid #47303e;
+    position:absolute; left:0; bottom:0; width:100%; height:9px;
+    background:linear-gradient(90deg,#52352a 95%,#b3bcb9 100%);
+    border-top: 3px solid #726539;
+    z-index:10;
 }
 
-/* PANCAKE PIXEL PLAYER------ */
+/* PANCAKE CHARACTER PIXELANIMATION */
 #player {
     position: absolute;
-    z-index:2;
-    bottom: 20px;
-    left: 54px;
-    width: 32px; height: 29px;
+    z-index:200;
+    bottom: 32px;
+    left: 60px;
+    width: 31px; height: 29px;
 }
 #player .body {
-    position: absolute; left:8px; top:8px;
-    width:16px; height:13px;
+    position: absolute; left:7px; top:8px;
+    width:17px; height:12px;
     background: #FFD076;
-    border: 2px solid #7d5027;
+    border: 2.2px solid #7d5027;
     border-radius: 3px;
-    box-shadow: 0 0 0px 1px #a58148;
+    box-shadow: 0 0 0px 1.2px #a58148;
 }
 #player .arm {
     position: absolute;
-    width: 7px; height: 3px;
-    background: #db8658;
+    width: 7.4px; height: 2.7px;
+    background: #e1a278;
     border-radius: 2px;
-    z-index:2;
-    transition:transform 0.13s;
+    z-index:5;
+    transition:transform 0.18s;
 }
-#player .arm.left {
-    left:0.2px; top:11px;
-    transform: rotate(-17deg);
-}
-#player.active .arm.left {transform:rotate(-40deg);}
-#player .arm.right {
-    right:0.5px; top:11.3px;
-    transform: rotate(15deg);
-}
-#player.active .arm.right {transform:rotate(33deg);}
+#player .arm.left {left:-2.2px; top:11px; transform: rotate(-18deg);}
+#player .arm.right {right:-2.1px; top:10.9px; transform: rotate(14deg);}
+#player.active .arm.left {transform:rotate(-37deg);}
+#player.active .arm.right {transform:rotate(29deg);}
 #player .leg {
     position: absolute;
-    width: 8px; height: 3px;
+    width: 7.5px; height: 3px;
     background: #7d5027;
-    border-radius: 1.2px;
-    z-index:2;
+    border-radius: 1.3px;
+    z-index:4;
     transition:transform 0.17s;
 }
-#player .leg.left {
-    bottom:0.7px; left:8px; transform: rotate(-9deg);
-}
-#player.active .leg.left {transform: rotate(-25deg);}
-#player .leg.right {
-    bottom:0.7px; left:13.8px; transform: rotate(17deg);
-}
-#player.active .leg.right {transform: rotate(29deg);}
+#player .leg.left {bottom:3px; left:10px; transform: rotate(-17deg);}
+#player .leg.right {bottom:3px; left:15.9px; transform: rotate(14deg);}
+#player.active .leg.left {transform: rotate(-34deg);}
+#player.active .leg.right {transform: rotate(33deg);}
 #player .eye {
     position: absolute;
-    width: 2.5px;
-    height: 2.7px;
-    background: #222;
-    border-radius: 1.4px;
+    width: 2.6px;
+    height: 2.6px;
+    background: #111;
+    border-radius: 1.3px;
     top:13px;
 }
-#player .eye.left { left:13.2px;}
-#player .eye.right { left:18.2px;}
+#player .eye.left { left:14px;}
+#player .eye.right { left:19px;}
 #player .smile {
     position: absolute;
-    top: 16.2px; left:14.1px;
-    width: 6.2px; height: 2.1px;
-    border-radius: 0 0 2.7px 2.7px;
+    top: 16.2px; left:13.1px;
+    width: 6.2px; height: 2.2px;
+    border-radius: 0 0 2.5px 2.5px;
     background: none;
-    border-bottom: 2.2px solid #282b10;
+    border-bottom: 2.4px solid #282b10;
     box-sizing:border-box;
 }
-/* Jumping Pancake Smile Animation */
 #player.active .smile {
     width:7.4px;
-    left:13px;
-    border-radius:9px 9px 18px 18px;
-    border-bottom:2.1px solid #ff8e6a;
-    background:rgba(255,255,255,0.13)
+    left:12.6px;
+    border-radius:10px 10px 15px 20px;
+    border-bottom:2.2px solid #e67a60;
 }
 
-/* ENEMY / Ghost Monster pixel */
+/* ENEMY Ghost/Monster-pixelanim */
 .obstacle {
     position: absolute;
-    bottom: 20px;
-    width: 27px;
-    height: 26px;
-    /* ghost body pixel */
-    background: none;
+    bottom: 34px;
+    width: 28px; height: 28px;
 }
 .obstacle .ghost-face {
-    position:absolute; left:5.5px; top:4.5px;
-    width:15px; height:13.7px;
-    background: #eb1920;
-    border-radius: 4px 5px 6px 9px/7px 7px 8px 10px;
-    border: 2.9px solid #600700;
-    box-shadow:0 1.4px 0 #ff8a8a70,inset 0 -4px 5px -2px #aa616d;
+    position:absolute; left:6.5px; top:6px;
+    width:15px; height:13px;
+    background: #ed2029;
+    border-radius: 4px 7px 6px 6px/8px 7px 8px 13px;
+    border: 2.5px solid #3a0719;
+    box-shadow:0 1.8px 0 #e8918fa6,inset 0 -9px 7px -2px #60161736;
 }
 .obstacle .ghost-eye.left {
-    position: absolute; width:3.3px; height:2.5px;
-    background:#fff; left:5.8px; top:10.8px;
-    border-radius:70% / 70%;
-}
-.obstacle .ghost-eye.right {
-    position: abso
+    position:
