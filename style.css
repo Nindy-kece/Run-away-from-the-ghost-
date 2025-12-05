@@ -7,11 +7,13 @@ body {
     padding: 0;
 }
 h1 {
-    margin-top:27px;
+    margin-top:20px;
+    margin-bottom:10px;
     letter-spacing:2px;
+    font-size:23px;
 }
 
-/* --- PIXEL TUTORIAL --- */
+/* --- SCREEN --- */
 #start-screen {
     position: fixed;
     left: 0; top: 0; width: 100vw; height: 100vh;
@@ -24,161 +26,310 @@ h1 {
 }
 #start-screen .tutorial {
     background: #232126;
-    padding: 23px 32px 19px;
-    border-radius: 7px;
-    box-shadow: 0 3px 24px #090e;
-    margin-bottom: 24px;
-    outline: 2.2px solid #444;
+    padding: 20px 28px 18px;
+    border-radius: 9px;
+    box-shadow: 0 3px 18px #090e;
+    margin-bottom: 23px;
+    outline: 2px solid #444;
 }
 #start-screen h2 {
     font-family: inherit;
-    font-size:21px;
-    margin-top:7px;
+    font-size:20px;
     text-decoration: underline;
-    margin-bottom:10px;
+    margin-bottom:7px;
+    margin-top:4px;
 }
 #start-btn {
-    font-size: 19px;
-    padding: 8px 39px 6px;
-    border-radius: 4px;
+    font-size: 20px;
+    padding: 8px 44px 7px;
+    border-radius: 5px;
     border: none;
     cursor: pointer;
     background: #fff178;
     color: #231c1c;
     font-family: inherit;
     font-weight: bold;
-    margin-top: 18px;
-    letter-spacing: 1.2px;
-    box-shadow: 0 2px 10px #340d05;
-    outline: 2px solid #b78b24;
-    transition: background 0.2s;
+    margin-top: 17px;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 10px #2b2122;
+    outline: 2px solid #be9e24;
+    transition: background 0.19s;
 }
-#start-btn:hover { 
-    background: #ffe659;
-}
+#start-btn:hover { background: #ffe54f; }
 
-.pancake-demo {
-    width: 16px; height: 12px; display:inline-block; vertical-align:middle;
-    image-rendering: pixelated;
-    background: #dba33a;
-    border: 3px solid #a47525;
-    border-radius: 2px;
-    box-shadow: 0 1px 0 #fff4b6, 0 2px 0 #a47525, 0 4px 0 #b78646;
+.pancake-demo, .obstacle-demo {
+    display:inline-block;
+    vertical-align:middle;
+    height: 36px;
+}
+.pixel-pancake {
     position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 32px;
 }
-.pancake-demo:before {
-    content:'';
-    display:block;
-    width:3px; height:3px;
-    background:#fff4c6;
-    position:absolute; top:3px; left:6px;
+.pixel-pancake .body {
+    position: absolute;
+    left: 8px; top: 9px;
+    width: 18px; height: 12px;
+    background: #FFD076;
+    border: 2.2px solid #7d5027;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px #957248;
 }
-.obstacle-demo {
-    width:15px; height:14px; display:inline-block;
-    image-rendering: pixelated;
-    background: #781215;
-    border: 3px solid #f12020;
-    border-radius:2px;
-    margin-left:2px;
-    box-shadow: 0 2px 0 #e85871, 0 0 3px #7f1717;
-} 
+.pixel-pancake .arm {
+    position: absolute;
+    width: 8px;
+    height: 3px;
+    background: #db8658;
+    border-radius: 2.5px;
+    z-index: 2;
+}
+.pixel-pancake .arm.left {
+    left: 0px; top: 13px;
+    transform: rotate(-19deg);
+}
+.pixel-pancake .arm.right {
+    right: 0px; top: 13px;
+    transform: rotate(15deg);
+}
+.pixel-pancake .leg {
+    position: absolute;
+    width: 11px; height: 3px;
+    background: #7d5027;
+    border-radius: 1.6px;
+    z-index:2;
+}
+.pixel-pancake .leg.left {
+    bottom: 2px; left: 7.8px; transform: rotate(-15deg);
+}
+.pixel-pancake .leg.right {
+    bottom: 2px; left: 14px; transform: rotate(10deg);
+}
+.pixel-pancake .eye {
+    position: absolute;
+    width: 2.2px;
+    height: 2.2px;
+    background: #222;
+    border-radius: 1.2px;
+    top: 13px;
+}
+.pixel-pancake .eye.left { left: 14.3px;}
+.pixel-pancake .eye.right { left: 19.5px;}
+.pixel-pancake .smile {
+    position: absolute;
+    top: 16px; left: 16px;
+    width: 6px; height: 2px;
+    border-radius: 0 0 3px 3px;
+    background: none;
+    border-bottom: 2px solid #282b10;
+}
 
-/* GAME AREA --- PIXEL HOTEL BACKGROUND --- */
+/* Monster - red ghost/setan */
+.pixel-ghost {
+    position:relative; display:inline-block;
+    width:23px; height:27px;
+} 
+.pixel-ghost .ghost-face {
+    position: absolute;
+    left:3px; top:4px;
+    width:17px; height:15px;
+    background: #ec1b24;
+    border-radius: 6px 6px 8px 8px/12px 11px 7px 13px;
+    border: 2.8px solid #77080e;
+    box-shadow:0 1.8px 0 #f88086 inset, 0 0 0px 1.7px #66121B;
+}
+.pixel-ghost .ghost-eye.left {
+    position: absolute; width:3.5px; height:4px;
+    background:#fff; left:9px; top:10px; border-radius:100%;
+    box-shadow: 5px 0 0 #fff;
+    border-bottom:1px solid #bbb;
+}
+.pixel-ghost .ghost-eye.right {display:none;} /* only left used for shadow effect */
+/* mouth pixel */
+.pixel-ghost:after {
+    content:"";
+    position:absolute;
+    left:11px;top:18.3px;
+    width:4px; height:1.7px;
+    border-radius:2px;
+    background:#670800;
+    box-shadow:-2.5px 0 #670800;
+}
+
+/* --- MAIN GAME --- */
 #game-container {
     position: relative;
-    margin: 34px auto 0 auto;
+    margin: 33px auto 0 auto;
     width: 560px;
     height: 210px;
-    background: repeating-linear-gradient(
-        90deg, #302531 0 20px, #3c313b 20px 40px
-    ),
-        linear-gradient(180deg, #232126 85%, #1a160c 100%);
-    border: 5px solid #523d33;
+    background: #332944;
+    border: 5px solid #304;
     overflow: hidden;
-    box-shadow: 0 0 17px #211a2ccd, 0 0 70px #120d1390 inset;
+    box-shadow: 0 0 17px #211a2c, 0 0 40px #120d1390 inset;
     display: block;
 }
-/* Lantai */
+
+/* HOTEL PIXEL HALLWAY */
+#background-pixel {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    z-index:0;
+    pointer-events: none;
+    /* Main wall color */
+    background:
+        /* Carpets */
+        linear-gradient(90deg,#a2283c 89.8%,transparent 0%) 0 170px/80px 40px repeat-x,
+        /* Runner shadow */
+        linear-gradient(to top,rgba(0,0,0,0.15) 85%,transparent 100%) 0 165px/100% 40px no-repeat,
+        /* Walls */
+        linear-gradient(to bottom,#726593 60%,#3e3245 120px,#20141a 100% );
+    border-bottom:2.7px solid #554a86;
+}
+/* Repeating room lines and doors - drawn in CSS and with pseudo for more pixel feeling */
+#background-pixel:before, #background-pixel:after {
+    content: '';
+    position: absolute;
+    top: 65px; width: 100%; height: 36px;
+    pointer-events: none;
+    background-repeat: repeat-x;
+    opacity:0.9;
+}
+#background-pixel:before {
+    /* Doors shadow top row */
+    left: 0;
+    background-image:
+        linear-gradient(90deg,transparent 0 32px,#d8cab2 32px 37px,transparent 37px 102px,#8b7b55 98px 104px,transparent 104px 150px),
+        linear-gradient(90deg,transparent 0 150px,#beab95 150px 158px,transparent 158px 340px);
+    background-size: 140px 100%; 
+    height: 37px; /* Combine walls+doors top */
+}
+#background-pixel:after {
+    /* Repeating pixels for floor/separators */
+    top:169px;
+    background-image:
+        repeating-linear-gradient(90deg,transparent 0 38px,#915f36 38px 41px,#e3af52 41px 45px,transparent 45px 85px);
+    height:8px;
+}
+
+/* Carpet middle line */
+#background-pixel .carpet-stripe {
+    position: absolute; left:0; top:190px; width:100%; height:8px;
+    background: repeating-linear-gradient(90deg,#f7df74 0 14px,transparent 14px 40px);
+}
+
 #game-container:after {
     content:"";
     display:block;
-    position:absolute; left:0; bottom:0; width:100%; height:20px;
+    position:absolute; left:0; bottom:0;
+    width:100%; height:16px;
+    /* skirting more pixel */
     background: repeating-linear-gradient(
-        90deg, #4e3b29 0 14px, #7b6349 14px 36px
+        90deg, #7c412c 0 12px, #533f50 12px 17px
     );
-    border-top: 3px solid #302214;
+    border-top: 3px solid #47303e;
 }
 
-/* --- PIXEL PANCAKE --- */
+/* PANCAKE PIXEL PLAYER------ */
 #player {
     position: absolute;
+    z-index:2;
     bottom: 20px;
     left: 54px;
-    width: 27px;
-    height: 18px;
-    image-rendering: pixelated;
-    border-radius:2.2px;
-    background: #dba33a;
-    border: 4px solid #a47525;
-    box-shadow: 0 2px 0 #ffdaa1, 0 7px 0 #bfa668;
+    width: 32px; height: 29px;
+}
+#player .body {
+    position: absolute; left:8px; top:8px;
+    width:16px; height:13px;
+    background: #FFD076;
+    border: 2px solid #7d5027;
+    border-radius: 3px;
+    box-shadow: 0 0 0px 1px #a58148;
+}
+#player .arm {
+    position: absolute;
+    width: 7px; height: 3px;
+    background: #db8658;
+    border-radius: 2px;
+    z-index:2;
+    transition:transform 0.13s;
+}
+#player .arm.left {
+    left:0.2px; top:11px;
+    transform: rotate(-17deg);
+}
+#player.active .arm.left {transform:rotate(-40deg);}
+#player .arm.right {
+    right:0.5px; top:11.3px;
+    transform: rotate(15deg);
+}
+#player.active .arm.right {transform:rotate(33deg);}
+#player .leg {
+    position: absolute;
+    width: 8px; height: 3px;
+    background: #7d5027;
+    border-radius: 1.2px;
+    z-index:2;
+    transition:transform 0.17s;
+}
+#player .leg.left {
+    bottom:0.7px; left:8px; transform: rotate(-9deg);
+}
+#player.active .leg.left {transform: rotate(-25deg);}
+#player .leg.right {
+    bottom:0.7px; left:13.8px; transform: rotate(17deg);
+}
+#player.active .leg.right {transform: rotate(29deg);}
+#player .eye {
+    position: absolute;
+    width: 2.5px;
+    height: 2.7px;
+    background: #222;
+    border-radius: 1.4px;
+    top:13px;
+}
+#player .eye.left { left:13.2px;}
+#player .eye.right { left:18.2px;}
+#player .smile {
+    position: absolute;
+    top: 16.2px; left:14.1px;
+    width: 6.2px; height: 2.1px;
+    border-radius: 0 0 2.7px 2.7px;
+    background: none;
+    border-bottom: 2.2px solid #282b10;
+    box-sizing:border-box;
+}
+/* Jumping Pancake Smile Animation */
+#player.active .smile {
+    width:7.4px;
+    left:13px;
+    border-radius:9px 9px 18px 18px;
+    border-bottom:2.1px solid #ff8e6a;
+    background:rgba(255,255,255,0.13)
 }
 
-#player:before {
-    content:"";
-    display:block;
-    width:9px; height:4px;
-    background:#fff7bc;
-    position:absolute; left:7px; top:3px;
-    opacity:0.90;
-    border-radius:1px;
-}
-
+/* ENEMY / Ghost Monster pixel */
 .obstacle {
     position: absolute;
     bottom: 20px;
-    width: 21px;
-    height: 18px;
-    background: #781215;
-    border: 3.5px solid #f12020;
-    border-radius:3px;
-    box-shadow: 0 2px 0 #bf406d, 0 0 4px #231c1c;
-    image-rendering: pixelated;
+    width: 27px;
+    height: 26px;
+    /* ghost body pixel */
+    background: none;
 }
-/* Eyes pixel - monster */
-.obstacle .eyes {
-    position:absolute;
-    left:6px; top:4px;
-    width:3px; height:3px;
-    background:#eee;
-    box-shadow: 5px 0 0 #eee;
-    border-radius:1px;
+.obstacle .ghost-face {
+    position:absolute; left:5.5px; top:4.5px;
+    width:15px; height:13.7px;
+    background: #eb1920;
+    border-radius: 4px 5px 6px 9px/7px 7px 8px 10px;
+    border: 2.9px solid #600700;
+    box-shadow:0 1.4px 0 #ff8a8a70,inset 0 -4px 5px -2px #aa616d;
 }
-.obstacle .mouth {
-    position:absolute;
-    left:7.2px; top:9.3px;
-    width:6px; height:2.5px;
-    background:#222;
-    border-radius:1px;
+.obstacle .ghost-eye.left {
+    position: absolute; width:3.3px; height:2.5px;
+    background:#fff; left:5.8px; top:10.8px;
+    border-radius:70% / 70%;
 }
-
-@keyframes shake {
-    0% {transform: translateY(0) scale(1,1);}
-    15% {transform: translateY(1px) scale(1.06,0.92);}
-    30% {transform: translateY(-1px) scale(0.97,1.10);}
-    100% {transform: translateY(0) scale(1,1);}
-}
-.obstacle { animation: shake 0.7s infinite; }
-
-#score {
-    font-size: 22px;
-    margin-top: 13px;
-    letter-spacing:1px;
-    font-family:inherit;
-}
-#game-tips {
-    font-size:14px;
-    margin-top:8px;
-    color:#fffbe8;
-    font-family:inherit;
-    letter-spacing:0.3px;
-}
+.obstacle .ghost-eye.right {
+    position: abso
