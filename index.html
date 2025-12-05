@@ -7,55 +7,56 @@
 </head>
 <body>
     <h1>Pancake Pixel Run: Hotel Hallway</h1>
-    <!-- Start Screen -->
     <div id="start-screen">
         <div class="tutorial">
-            <h2>Panduan</h2>
-            <div style="margin-bottom:9px;">
-              <span>Ini kamu (pancake pixel): </span>
+            <h2>Panduan Main</h2>
+            <div style="margin-bottom:10px;">
+              Ini kamu (pancake pixel):&nbsp;
               <span class="pancake-demo">
                 <div class="pixel-pancake">
+                  <div class="body"></div>
                   <div class="arm left"></div>
                   <div class="arm right"></div>
-                  <div class="body"></div>
-                  <div class="smile"></div>
                   <div class="leg left"></div>
                   <div class="leg right"></div>
                   <div class="eye left"></div>
                   <div class="eye right"></div>
+                  <div class="smile"></div>
                 </div>
               </span>
             </div>
             <div style="margin-bottom:9px;">
-              <span>Hindari "setan" ini:</span>
+              Hindari "setan putih" ini:
               <span class="obstacle-demo">
-                  <div class="pixel-ghost">
-                    <div class="ghost-face"></div>
-                    <div class="ghost-eye left"></div>
-                    <div class="ghost-eye right"></div>
-                  </div>
+                <div class="pixel-ghost">
+                  <div class="body"></div>
+                  <div class="eye left"></div>
+                  <div class="eye right"></div>
+                  <div class="mouth"></div>
+                </div>
               </span>
             </div>
             <ul style="text-align:left;display:inline-block;">
-                <li>Tekan <strong>Spasi</strong> <br>atau <br> klik area game<br> untuk meloncat</li>
-                <li>Lompat tepat waktu agar selamat &amp; skor naik.</li>
+                <li>Tekan <strong>Spasi</strong> atau klik area game untuk meloncat</li>
+                <li>Lompat tepat waktu agar selamat &amp; skor naik</li>
                 <li>Pancake dikejar, jika ketangkap, kalah!</li>
             </ul>
         </div>
         <button id="start-btn">START</button>
     </div>
-    <!-- Game Area -->
     <div id="game-container" style="display:none;">
         <div id="hotel-bg">
+            <div class="ceiling"></div>
             <div class="lamps"></div>
-            <div class="doors left"></div>
-            <div class="doors right"></div>
+            <div class="walls"></div>
+            <div class="doors doors-left"></div>
+            <div class="doors doors-right"></div>
             <div class="carpet"></div>
-            <div class="shadows"></div>
+            <div class="floor"></div>
         </div>
         <div id="player"></div>
     </div>
-    <p id="game-tips" style="display:none;">Tekan <strong>Space</strong> atau klik area untuk meloncat!</p>
+    <p id="game-tips" style="display:none;">Tekan <strong>Space</strong> atau klik area untuk loncat!</p>
     <p id="score" style="display:none;">Skor: 0</p>
     <script src="script.js"></script>
 </body>
